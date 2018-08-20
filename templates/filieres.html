@@ -1,8 +1,34 @@
-{% for filiere in filiere_list %}
- <ul>
- <li><a href="{% url 'filiere_detail' filiere.pk %}">{{ filiere.libelle }}</a></li>
- {% empty %}
- <li>liste vide</li>
- {% endfor %}
- </ul>
+{% extends 'base.html' %}
+
+{% block header %}
+	{{ block.super }}
+{% endblock header %}
+
+
+{% block connexion %}
+  
+{% endblock connexion %}
+    
+
+{% block departement %}
+<section id="content">
+	<div class="inside">
+	<div class="categories">
+
+		{% for filiere in filiere_list %}
+ 			<ul class="list">
+ 				<li><a href="{% url 'filiere_detail' filiere.pk %}">{{ filiere.libelle|lower }}</a></li>
+ 		{% empty %}
+ 				<li>liste vide</li>
+ 		{% endfor %}
+ 			</ul>
             
+
+	</div>
+	</div>
+</section>
+
+{% endblock departement %}
+
+{% block filiere %}
+{% endblock filiere %}

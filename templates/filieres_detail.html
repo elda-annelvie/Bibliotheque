@@ -1,10 +1,39 @@
-<h2>{{ filiere.libelle }}</h2>
-{{ filiere.description }}
+{% extends 'base.html' %}
 
-{% for document in filiere.document_set.all %}
+{% block header %}
+	{{ block.super }}
+{% endblock header %}
 
- <ul>
- 	<li><a href="{% url 'document_list' %}">{{ document.titre }}</a></li>
- </ul>
+{% block connexion %}
+  
+{% endblock connexion %}
 
-{% endfor %}
+
+{% block departement %}
+<section id="content">
+	<div class="inside">
+	<div class="categories">
+
+		<h2><span>Titre: {{ filiere.libelle }}</span> </h2>
+		<h3><span>Description:</span> </h3>
+		<p>{{ filiere.description }}</p>
+
+		<h3><span>Documents associés:</span></h3>
+		{% for document in filiere.document_set.all %}
+			<ul>
+				<li><a href="{% url 'document_detail' document.pk %}">{{ document.titre|lower }}</a></li>
+
+
+		{% empty %}
+				<li>Aucun document associé</li>
+			</ul>
+		{% endfor %}
+	
+		</div>
+	</div>
+</section>
+
+{% endblock departement %}
+
+{% block filiere %}
+{% endblock filiere %}

@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+
+{% block header %}
+	{{ block.super }}
+{% endblock header %}
+
+{% block connexion %}
+  
+{% endblock connexion %}
+
+{% block departement %}
+
+<section id="content">
+	<div class="inside">
+		<h2>Requête invalide<span></span></h2>
+		<ul class="list">
+			
+			<p>La requête {{ request.path }} n'est pas valide. Veillez entrer une requête valide</p>
+		</ul>
+	</div>
+</section>   
+
+{% endblock departement %}
+
+{% block filiere %}
+{% endblock filiere %}

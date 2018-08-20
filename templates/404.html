@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+
+{% block header %}
+	{{ block.super }}
+{% endblock header %}
+
+{% block connexion %}
+  
+{% endblock connexion %}
+
+{% block departement %}
+
+<section id="content">
+	<div class="inside">
+		<h2>Erreur de requête<span></span></h2>
+		<ul class="list">
+			
+			<p>La page {{ request.path }} n'est pas une page de ce site web.</p>
+		</ul>
+	</div>
+</section>   
+
+{% endblock departement %}
+
+{% block filiere %}
+{% endblock filiere %}

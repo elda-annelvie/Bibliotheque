@@ -1,3 +1,5 @@
+
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import TemplateView, ListView, DetailView
 
 from . import models
@@ -26,9 +28,16 @@ class DocumentListView(ListView):
 	template_name='documents.html'
 	model=models.Document
 
-class DocumentDetailView(DetailView):
+class DocumentDetailView(LoginRequiredMixin, DetailView):
 	template_name='documents_detail.html'
 	model=models.Document
+
+
+class EquipeView(TemplateView):
+	template_name='equipe.html'
+	
+
+		
 
 
 

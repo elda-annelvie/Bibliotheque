@@ -1,7 +1,40 @@
-{% for departement in departement_list %}
-<ul>
-<li><a href="{% url 'departement_detail' departement.pk %}">{{ departement.libelle }}</a></li>
-{% empty %}
-<li>Liste vide</li>
-{% endfor %}
-</ul>    
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block header %}
+	{{ block.super }}
+{% endblock header %}
+
+{% block connexion %}
+  
+{% endblock connexion %}
+
+{% block departement %}
+
+<section id="content">
+	<div class="inside">
+		
+		<h2><span>Départements</span></h2>
+		<ul>
+			{% for departement in departement_list %}
+			<h2><span><a href="{% url 'departement_detail' departement.pk %}">{{ departement.libelle|lower }}</a></span></h2>
+			<li class="last"><span><a href="{% url 'departement_detail' departement.pk %}">
+				<div class="img-box">
+					<img src="{{ departement.image.url }}" width="400" height="200" />
+				</div>
+				
+			</a></span></li>
+			
+			<p class="p0">{{ departement.description|truncatechars:285 }}</p>
+			{% empty %}
+				<li>Liste vide</li>
+			{% endfor %}
+		</ul>
+		
+	</div>
+</section>   
+
+{% endblock departement %}
+
+{% block filiere %}
+{% endblock filiere %}

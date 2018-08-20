@@ -26,7 +26,7 @@ SECRET_KEY = '0^+%=!qx0p81xv!x8nnjbn)by4j^juohwxl%#4d!2!rpnimj6o'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['eces-biblio.org', '127.0.0.1']
 
 
 # Application definition
@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'eces',
+
 ]
 
 MIDDLEWARE = [
@@ -121,4 +122,13 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 MEDIA_URL='/multimedia/'
-STATIC_ROOT='/home/ntangou/Bureau/bibliotheque/multimedia'
+STATIC_ROOT='/home/ali/Bureau/bibliotheque/multimedia'
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'multimedia')
+]
+
+LOGIN_REDIRECT_URL = 'accueil'
+LOGOUT_REDIRECT_URL = 'accueil'
+
+

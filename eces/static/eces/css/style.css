@@ -23,6 +23,7 @@ html, body {
 	overflow:hidden;
 	font-size:.875em;
 	padding-bottom:176px;
+	padding-top: 0px;
 }
 header {
 	background:url(../images/header-bg.jpg) no-repeat center top;
@@ -42,6 +43,7 @@ aside {
 	float:left;
 	margin-right:30px;
 	padding:5px 0 0 0;
+	
 }
 .fleft {
 	float:left;
@@ -240,6 +242,7 @@ p {
 #banner h2 span span {
 	font-size:30px;
 	margin-top:-8px;
+
 }
 a {
 	color:#ff7b01;

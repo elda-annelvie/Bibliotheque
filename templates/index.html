@@ -1,13 +1,12 @@
 {% load staticfiles %}
 <!DOCTYPE html>
 <html lang="en">
-
-<!--{% static 'eces/-->
 <head>
-<title>ECES Biblio</title>
+<title>ECES Bibliothèque</title>
 <meta charset="utf-8">
 <link rel="stylesheet" href="{% static 'eces/css/reset.css' %}" type="text/css" media="all">
-<link rel="stylesheet" href="{% static 'eces/css/style.css' %}"  type="text/css" media="all">
+<link rel="stylesheet" href="{% static 'eces/css/style.css' %}" type="text/css" media="all">
+<link rel="icon" href="{% static 'eces/images/biblio.png' %}">
 <script type="text/javascript" src="{% static 'eces/js/jquery-1.4.2.min.js' %}" ></script>
 <script type="text/javascript" src="{% static 'eces/js/cufon-yui.js' %}"></script>
 <script type="text/javascript" src="{% static 'eces/js/cufon-replace.js' %}"></script>
@@ -24,42 +23,59 @@
 <body id="page1">
 <!-- START PAGE SOURCE -->
 <div class="wrap">
+  {% block header %}
   <header>
     <div class="container">
-      <h1><a href="#">Student's site</a></h1>
+      <h1><a href="#">Bibliothèque</a></h1>
       <nav>
         <ul>
-            <li class="current"><a href="templates/index.html" class="m1">Acceuil</a></li>
-          <li><a href="{% static 'eces/contact-us.html' %}" class="m4">Nous joindre</a></li>
+          <li class="current"><a href="{% url 'accueil' %}" class="m1">Accueil</a></li>
+          <li><a href="{% url 'departement_list' %}" class="m2">Départements</a></li>
+          <li><a href="{% url 'equipe_list' %}" class="m3">Equipe</a></li>       
+
+         {% if user.is_authenticated %}
+          <li><a href="{% url 'logout' %}" class="m2">Déconnexion</a></li>
+        {% else %}
+         <li><a href="{% url 'login' %}" class="m2">Connexion</a></li>
+        {% endif %}
         </ul>
-      </nav>
+    </nav>
     </div>
   </header>
+  {% endblock header %}
+
+  {% block connexion %}
+  {% endblock connexion %}
+
+
   <div class="container">
+    {% block filiere %}
     <aside>
-      <h3>Departements</h3>
+      <h3>Filières</h3>
       <ul class="categories">
-        <li><span><a href="#">Gestion</a></span></li>
-        <li><span><a href="#">Informatique</a></span></li>
-        <li><span><a href="#">Langues</a></span></li>
-        <li><span><a href="#">Polytechnique</a></span></li>
-         <li><span><a href="#">Qualité</a></span></li>
-        <li><span><a href="#">Transport et Logistique</a></span></li>
-       
+        
       </ul>
-      
     </aside>
+    {% endblock filiere %}
+
+    {% block departement %}
     <section id="content">
-      <div id="banner">
+      <!--<div id="banner">
         <h2>Professional <span>Online Education <span>Since 1992</span></span></h2>
-      </div>
-      
+      </div>-->
+      <div class="inside">
+        <h2>Départements<span></span></h2>
+        <ul class="list">
+          
+        </ul>
     </section>
+    {% endblock departement %}
   </div>
 </div>
 <footer>
   <div class="footerlink">
-    <p class="rf">Design by <a href="http://www.templatemonster.com/">TemplateMonster</a></p>
+    <p class="lf">Copyright &copy; 2018 <a href="http://www.eces-online.org/">ECES</a> - All Rights Reserved</p>
+    <p class="rf">Cette Bibliotheque est développée en <a href="http://www.python.org/">Python</a> en utilisant le framework<a href="https://docs.djangoproject.com/fr"> Django</a></p>
     <div style="clear:both;"></div>
   </div>
 </footer>

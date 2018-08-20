@@ -1,6 +1,32 @@
-<h1>Titre: {{ document.titre }}</h1>
-<img src="{{ document.Image.url }}" width="200" />
-<p>{{ document.description }}</p>
-<p><a href="{{ document.fichier.url }}">Voir le document</a></p>
+{% extends 'base.html' %}
+
+{% block header %}
+	{{ block.super }}
+{% endblock header %}
+
+{% block connexion %}
+  
+{% endblock connexion %}
+
+
+{% block departement %}
+<section id="content">
+	<div class="inside">
+	<div class="categories">
+
+
+		<h3>Titre: {{ document.titre }}</h3>
+
+		<img src="{{ document.image.url }}" width="650" height="300" />
+		<p>{{ document.description }}</p>
+		<p><a href="{{ document.fichier.url }}">Document PDF</a></p>
 
  
+	</div>
+	</div>
+</section>
+
+{% endblock departement %}
+
+{% block filiere %}
+{% endblock filiere %}

@@ -35,7 +35,7 @@ header .container {
 }
 section#content {
 	float:left;
-	width:691px;
+	width:940px;
 }
 aside {
 	width:219px;
@@ -194,6 +194,7 @@ p {
 }
 .p0 {
 	margin:0;
+	margin-bottom: 16px;
 }
 .address {
 	width:100%;
@@ -242,7 +243,7 @@ p {
 	margin-top:-8px;
 }
 a {
-	color:#ff7b01;
+	color:#008CC4;
 	outline:none;
 }
 a:hover {

@@ -1,7 +1,31 @@
-{% for document in document_list %}
-<ul>
-<li><a href="{% url 'document_detail' document.pk %}">{{ document.titre }}</a></li>
-{% empty %}
-<li>Liste vide</li>
-{% endfor %}
-</ul> 
+{% extends 'base.html' %}
+
+{% block header %}
+	{{ block.super }}
+{% endblock header %}
+
+{% block connexion %}
+  
+{% endblock connexion %}
+
+{% block departement %}
+<section id="content">
+	<div class="inside">
+	<div class="categories">
+
+		{% for document in document_list %}
+			<ul class="list">
+				<li><a href="{% url 'document_detail' document.pk %}">{{ document.titre|lower }}</a></li>
+		{% empty %}
+			<li>Liste vide</li>
+		{% endfor %}
+			</ul> 
+
+	</div>
+	</div>
+</section>
+
+{% endblock departement %}
+
+{% block filiere %}
+{% endblock filiere %}		
