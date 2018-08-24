@@ -37,6 +37,7 @@ header .container {
 section#content {
 	float:left;
 	width:691px;
+	list-style:
 }
 aside {
 	width:219px;
@@ -195,7 +196,9 @@ p {
 	line-height:1.429em;
 }
 .p0 {
-	margin:0;
+	margin:0px;
+
+
 }
 .address {
 	width:100%;
@@ -233,6 +236,7 @@ p {
 	line-height:1.2em;
 	padding:75px 0 0 55px;
 	margin:0;
+	
 }
 #banner h2 span {
 	display:block;
@@ -263,6 +267,8 @@ h2 {
 }
 h2 span {
 	color:#8d8d8d;
+
+
 }
 h3 {
 	font-size:20px;
@@ -360,6 +366,8 @@ header nav ul li.current a.m5 {
 }
 #content .inside {
 	padding:22px 20px 0 29px;
+
+}
 }
 #content .inner_copy, #content .inner_copy a {
 	border:0;

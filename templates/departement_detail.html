@@ -13,13 +13,15 @@
 <section id="content">
 	<div class="inside">
 	<div class="categories">
+		
 		<h2><span>{{ departement.libelle }}</span></h2>
-		<img src="{{ departement.image.url }}"  width="450" height="300" />
+		
+		<img src="{{ departement.image.url }}"  width="450" height="300" style="margin-bottom:20px;"/>
 		<p class="p0">{{ departement.description }}</p>
 		<h2>Filières<span> associées</span></h2>
 		{% for filiere in departement.filiere_set.all %}
 			<ul class="last">
-				<li><a href="{% url 'filiere_detail' filiere.pk %}" >{{ filiere.libelle|lower }}</a></li>
+				<li><a href="{% url 'filiere_detail' filiere.pk %}">{{ filiere.libelle|lower }}</a></li>
 
 
 		{% empty %}

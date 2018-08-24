@@ -11,22 +11,29 @@
 
 {% block departement %}
 
+
+
 <section id="content">
 	<div class="inside">
 		
-		<h2><span>Départements</span></h2>
+		<h2><center><span>Nos Départements</center></span></h2>
+		<br></br>
+
 		<ul>
-			{% for departement in departement_list %}
+           
+           {% for departement in departement_list %}
 			<h2><span><a href="{% url 'departement_detail' departement.pk %}">{{ departement.libelle|lower }}</a></span></h2>
-			<li class="last"><span><a href="{% url 'departement_detail' departement.pk %}">
+			<li class="last" ><span><a href="{% url 'departement_detail' departement.pk %}">
 				<div class="img-box">
 					<img src="{{ departement.image.url }}" width="400" height="200" />
 				</div>
 				
-			</a></span></li>
-			
+	            </a></span></li>
 			<p class="p0">{{ departement.description|truncatechars:285 }}</p>
-			{% empty %}
+			<br></br>
+
+
+               {% empty %}
 				<li>Liste vide</li>
 			{% endfor %}
 		</ul>
@@ -35,6 +42,7 @@
 </section>   
 
 {% endblock departement %}
+
 
 {% block filiere %}
 {% endblock filiere %}
