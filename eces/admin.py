@@ -38,7 +38,7 @@ class FiliereAdmin(admin.ModelAdmin):
 	]
 	
 
-
+admin.site.site_header='BIBLIOTHEQUE'
 
 
 
@@ -52,4 +52,7 @@ class  DocumentAdmin(admin.ModelAdmin):
 admin.site.register(Departement, DepartementAdmin )
 admin.site.register(Filiere, FiliereAdmin)
 admin.site.register(Document, DocumentAdmin)
+
+
+admin.site.site_header='Administration BIBLIOTHEQUE'
 # Register your models here
