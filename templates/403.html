@@ -1,27 +1,29 @@
 {% extends 'base.html' %}
-
-
 {% block header %}
 	{{ block.super }}
 {% endblock header %}
 
 {% block connexion %}
-  
-{% endblock connexion %}
+{% endblock connexion%}
+
 
 {% block departement %}
-
 <section id="content">
 	<div class="inside">
-		<h2>Accès refusé<span></span></h2>
-		<ul class="list">
-			
-			<p>Vous n'avez pas une autorisation pour accèder à la page demandée.</p>
-		</ul>
+	
+
+		<h2><span>Refus d'acces </span></h2>
+		<p>l'utilisateur na pas droit a cette page {{ request.path }} </p>
+		
 	</div>
-</section>   
+</section>
 
 {% endblock departement %}
 
 {% block filiere %}
 {% endblock filiere %}
+
+
+
+
+
